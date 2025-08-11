@@ -26,13 +26,13 @@ class ProxyConfidentialDataView(RetrieveAPIView):
         """Provide the AzureSearchServiceClient. This can be overwritten per view if needed."""
         return ConfidentialDataClient(
             base_url=settings.AZURE_STORAGE_CONTAINER_ENDPOINT,
-            client_id=settings.MANAGED_IDENTITY_CLIENT_ID,
         )
 
     def get(self, request: Request, *args, **kwargs):
         self.client = self.get_client()
 
         stream = self.client.call(request=request)
+        stream.seek(0)
         return FileResponse(stream, as_attachment=True)
 
     def get_permissions(self):

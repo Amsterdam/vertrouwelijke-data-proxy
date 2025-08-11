@@ -11,7 +11,7 @@ USER_AGENT = "Amsterdam-Vertrouwelijke-Data-Proxy/1.0"
 
 
 class ConfidentialDataClient:
-    def __init__(self, base_url, client_id) -> None:
+    def __init__(self, base_url) -> None:
         """Initialize the client configuration.
 
         :param base_url: Base URL of the Search Backend
