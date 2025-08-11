@@ -1,7 +1,7 @@
 import io
 import logging
 
-from azure.identity import ManagedIdentityCredential
+from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
 from rest_framework.request import Request
 
@@ -16,14 +16,17 @@ class ConfidentialDataClient:
 
         :param base_url: Base URL of the Search Backend
         """
-        azure_credential = ManagedIdentityCredential(client_id=client_id)
+        azure_credential = DefaultAzureCredential()
         self.blob_service_client = BlobServiceClient(
             account_url=base_url, credential=azure_credential
         )
 
     def call(self, request: Request) -> io.BytesIO:
         stream = io.BytesIO()
-        blob_client = self.blob_service_client.get_blob_client("bulk-data-fp-mdw", request.path)
-        blob_client.download_blob().read_into(stream)
+        blob_path = request.path[1:]  # path always starts with a '/'
+        if blob_path.startswith("bulk-data-fp-mdw"):
+            blob_path = blob_path.split("/", 1)[1]  # just keep the part after 'bulk-data-fp-mdw/'
+        blob_client = self.blob_service_client.get_blob_client("bulk-data-fp-mdw", blob_path)
+        blob_client.download_blob().readinto(stream)
 
         return stream
