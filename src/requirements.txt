@@ -23,6 +23,7 @@ azure-core==1.34.0 \
     #   azure-identity
     #   azure-monitor-opentelemetry
     #   azure-monitor-opentelemetry-exporter
+    #   azure-storage-blob
     #   msrest
 azure-core-tracing-opentelemetry==1.0.0b12 \
     --hash=sha256:38fd42709f1cc4bbc4f2797008b1c30a6a01617e49910c05daa3a0d0c65053ac \
@@ -42,6 +43,10 @@ azure-monitor-opentelemetry-exporter==1.0.0b38 \
     --hash=sha256:cabc0313a06067612a27ca852ff782aa34e726d32e1816cd0366981a8b29b926 \
     --hash=sha256:eda37c4f32a3b50d2946efda4e27fc17f216533e152cf1209b96fe9141f8ef0d
     # via azure-monitor-opentelemetry
+azure-storage-blob==12.26.0 \
+    --hash=sha256:5dd7d7824224f7de00bfeb032753601c982655173061e242f13be6e26d78d71f \
+    --hash=sha256:8c5631b8b22b4f53ec5fff2f3bededf34cfef111e2af613ad42c9e6de00a77fe
+    # via -r requirements.in
 certifi==2025.6.15 \
     --hash=sha256:2e0c7ce7cb5d8f8634ca55d2ba7e6ec2689a2fd6537d8dec1296a477a4910057 \
     --hash=sha256:d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b
@@ -321,6 +326,7 @@ cryptography==45.0.4 \
     --hash=sha256:f3fe7a5ae34d5a414957cc7f457e2b92076e72938423ac64d215722f6cf49a9e
     # via
     #   azure-identity
+    #   azure-storage-blob
     #   jwcrypto
     #   msal
     #   pyjwt
@@ -379,7 +385,9 @@ iniconfig==2.1.0 \
 isodate==0.7.2 \
     --hash=sha256:28009937d8031054830160fce6d409ed342816b543597cece116d966c6d99e15 \
     --hash=sha256:4cd1aa0f43ca76f4a6c6c0292a85f40b35ec2e43e315b59f06e6d32171a953e6
-    # via msrest
+    # via
+    #   azure-storage-blob
+    #   msrest
 jwcrypto==1.5.6 \
     --hash=sha256:150d2b0ebbdb8f40b77f543fb44ffd2baeff48788be71f67f03566692fd55789 \
     --hash=sha256:771a87762a0c081ae6166958a954f80848820b2ab066937dc8b8379d65b1b039
@@ -693,6 +701,7 @@ typing-extensions==4.14.0 \
     # via
     #   azure-core
     #   azure-identity
+    #   azure-storage-blob
     #   jwcrypto
     #   opentelemetry-sdk
 urllib3==2.4.0 \
