@@ -24,7 +24,7 @@ class ConfidentialDataClient:
     def call(self, request: Request) -> io.BytesIO:
         stream = io.BytesIO()
         blob_path = request.path[1:]  # path always starts with a '/'
-        if blob_path.startswith("bulk-data-fp-mdw"):
+        if blob_path.startswith("bulk-data-fp-mdw"):  # this matches the ingress.yaml
             blob_path = blob_path.split("/", 1)[1]  # just keep the part after 'bulk-data-fp-mdw/'
         blob_client = self.blob_service_client.get_blob_client("bulk-data-fp-mdw", blob_path)
         blob_client.download_blob().readinto(stream)

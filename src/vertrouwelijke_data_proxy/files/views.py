@@ -33,7 +33,8 @@ class ProxyConfidentialDataView(RetrieveAPIView):
 
         stream = self.client.call(request=request)
         stream.seek(0)
-        return FileResponse(stream, as_attachment=True)
+        filename = request.path.split("/")[-1]
+        return FileResponse(stream, as_attachment=True, filename=filename)
 
     def get_permissions(self):
         """Collect the DRF permission checks.
