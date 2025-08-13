@@ -1,5 +1,6 @@
 from django.conf import settings
-from django.http import FileResponse
+from django.core.exceptions import BadRequest
+from django.http import FileResponse, HttpResponseBadRequest, HttpResponseNotFound
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.request import Request
 
@@ -30,8 +31,13 @@ class ProxyConfidentialDataView(RetrieveAPIView):
 
     def get(self, request: Request, *args, **kwargs):
         self.client = self.get_client()
+        try:
+            stream = self.client.call(request=request)
+        except BadRequest:
+            return HttpResponseBadRequest()
+        except FileNotFoundError:
+            return HttpResponseNotFound()
 
-        stream = self.client.call(request=request)
         stream.seek(0)
         filename = request.path.split("/")[-1]
         return FileResponse(stream, as_attachment=True, filename=filename)
