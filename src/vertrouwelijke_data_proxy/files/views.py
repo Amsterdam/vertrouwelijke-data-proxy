@@ -1,5 +1,6 @@
 from django.conf import settings
-from django.http import HttpResponse
+from django.core.exceptions import BadRequest
+from django.http import FileResponse, HttpResponseBadRequest, HttpResponseNotFound
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.request import Request
 
@@ -24,14 +25,22 @@ class ProxyConfidentialDataView(RetrieveAPIView):
 
     def get_client(self) -> ConfidentialDataClient:
         """Provide the AzureSearchServiceClient. This can be overwritten per view if needed."""
-        return ConfidentialDataClient(base_url=settings.AZURE_STORAGE_CONTAINER_ENDPOINT)
+        return ConfidentialDataClient(
+            base_url=settings.AZURE_STORAGE_CONTAINER_ENDPOINT,
+        )
 
     def get(self, request: Request, *args, **kwargs):
         self.client = self.get_client()
+        try:
+            stream = self.client.call(request=request)
+        except BadRequest:
+            return HttpResponseBadRequest()
+        except FileNotFoundError:
+            return HttpResponseNotFound()
 
-        response = self.client.call(request=request)
-
-        return HttpResponse(response, headers=response.headers)
+        stream.seek(0)
+        filename = request.path.split("/")[-1]
+        return FileResponse(stream, as_attachment=True, filename=filename)
 
     def get_permissions(self):
         """Collect the DRF permission checks.

@@ -12,11 +12,8 @@ services:
       CORS_ALLOW_ALL_ORIGINS: "${CORS_ALLOW_ALL_ORIGINS:-true}"
       DJANGO_LOG_LEVEL: "${DJANGO_LOG_LEVEL:-INFO}"
       LOG_LEVEL: "${LOG_LEVEL:-INFO}"
-      # Generated using: jq -c < src/jwks_test.json
-      PUB_JWKS: '{"keys":[{"kty":"EC","key_ops":["verify","sign"],"kid":"2aedafba-8170-4064-b704-ce92b7c89cc6","crv":"P-256","x":"6r8PYwqfZbq_QzoMA4tzJJsYUIIXdeyPA27qTgEJCDw=","y":"Cf2clfAfFuuCB06NMfIat9ultkMyrMQO9Hd2H7O9ZVE=","d":"N1vu0UQUp0vLfaNeM0EDbl4quvvL6m_ltjoAXXzkI3U="}]}'
       OAUTH_JWKS_URL: "${OAUTH_JWKS_URL}"
       AZURE_STORAGE_CONTAINER_ENDPOINT: "${AZURE_STORAGE_CONTAINER_ENDPOINT}"
-
       DSO_API_BASE_URL: "${DSO_API_BASE_URL:-https://api.data.amsterdam.nl}"
       CLOUD_ENV: "${CLOUD_ENV:-local}"
       DJANGO_DEBUG: 1
