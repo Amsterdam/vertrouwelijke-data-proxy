@@ -1,14 +1,14 @@
-Django == 5.2.5
+Django == 5.2.6
 django-environ == 0.12.0
-django-cors-headers == 4.7.0
+django-cors-headers == 4.9.0
 django-healthchecks == 1.5.0
 datapunt-authorization-django == 1.6.2
 djangorestframework == 3.16.1
 python-json-logger==3.3.0
 requests == 2.32.5
 more-ds == 0.0.6
-whitenoise == 6.9.0
-azure-identity == 1.24.0
+whitenoise == 6.11.0
+azure-identity == 1.25.0
 azure-storage-blob == 12.26.0
 
 # Monitoring
@@ -17,6 +17,6 @@ uwsgitop == 0.12
 uwsgi-readiness-check == 0.2.0
 
 # Testing
-pytest == 8.4.1
+pytest == 8.4.2
 pytest-django == 4.11.1
 pytest-cov == 6.2.1
