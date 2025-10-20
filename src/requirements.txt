@@ -43,9 +43,9 @@ azure-monitor-opentelemetry-exporter==1.0.0b38 \
     --hash=sha256:cabc0313a06067612a27ca852ff782aa34e726d32e1816cd0366981a8b29b926 \
     --hash=sha256:eda37c4f32a3b50d2946efda4e27fc17f216533e152cf1209b96fe9141f8ef0d
     # via azure-monitor-opentelemetry
-azure-storage-blob==12.26.0 \
-    --hash=sha256:5dd7d7824224f7de00bfeb032753601c982655173061e242f13be6e26d78d71f \
-    --hash=sha256:8c5631b8b22b4f53ec5fff2f3bededf34cfef111e2af613ad42c9e6de00a77fe
+azure-storage-blob==12.27.0 \
+    --hash=sha256:99e8e2cd2a6a723930c364ea0a0539d28e465bc77cf94ef12813c465dc09cb9a \
+    --hash=sha256:b7bef8acb79825f96f2fa24c7535e2924fb3dbc4840a2eebb5f117175bde3657
     # via -r requirements.in
 certifi==2025.6.15 \
     --hash=sha256:2e0c7ce7cb5d8f8634ca55d2ba7e6ec2689a2fd6537d8dec1296a477a4910057 \
