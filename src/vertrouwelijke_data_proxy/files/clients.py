@@ -3,6 +3,7 @@ import logging
 
 from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
+from django.conf import settings
 from django.core.exceptions import BadRequest
 from rest_framework.request import Request
 
@@ -17,7 +18,9 @@ class ConfidentialDataClient:
 
         :param base_url: Base URL of the Search Backend
         """
-        azure_credential = DefaultAzureCredential()
+        azure_credential = DefaultAzureCredential(
+            managed_identity_client_id=settings.MANAGED_IDENTITY_CLIENT_ID
+        )
         self.blob_service_client = BlobServiceClient(
             account_url=base_url, credential=azure_credential
         )
