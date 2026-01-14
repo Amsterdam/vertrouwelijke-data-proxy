@@ -15,9 +15,9 @@ asgiref==3.8.1 \
     #   django
     #   django-cors-headers
     #   opentelemetry-instrumentation-asgi
-azure-core==1.34.0 \
-    --hash=sha256:0615d3b756beccdb6624d1c0ae97284f38b78fb59a2a9839bf927c66fbbdddd6 \
-    --hash=sha256:bdb544989f246a0ad1c85d72eeb45f2f835afdcbc5b45e43f0dbde7461c81ece
+azure-core==1.38.0 \
+    --hash=sha256:8194d2682245a3e4e3151a667c686464c3786fed7918b394d035bdcd61bb5993 \
+    --hash=sha256:ab0c9b2cd71fecb1842d52c965c95285d3cfb38902f6766e4a471f1cd8905335
     # via
     #   azure-core-tracing-opentelemetry
     #   azure-identity
@@ -826,10 +826,6 @@ ruff==0.14.10 \
     --hash=sha256:e51d046cf6dda98a4633b8a8a771451107413b0f07183b2bef03f075599e44e6 \
     --hash=sha256:f24b47993a9d8cb858429e97bdf8544c78029f09b520af615c1d261bf827001d
     # via -r requirements_dev.in
-six==1.17.0 \
-    --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
-    --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
-    # via azure-core
 sqlparse==0.5.3 \
     --hash=sha256:09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272 \
     --hash=sha256:cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca
