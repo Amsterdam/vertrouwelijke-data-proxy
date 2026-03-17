@@ -29,9 +29,9 @@ azure-core-tracing-opentelemetry==1.0.0b12 \
     --hash=sha256:38fd42709f1cc4bbc4f2797008b1c30a6a01617e49910c05daa3a0d0c65053ac \
     --hash=sha256:bb454142440bae11fd9d68c7c1d67ae38a1756ce808c5e4d736730a7b4b04144
     # via azure-monitor-opentelemetry
-azure-identity==1.25.2 \
-    --hash=sha256:030dbaa720266c796221c6cdbd1999b408c079032c919fef725fcc348a540fe9 \
-    --hash=sha256:1b40060553d01a72ba0d708b9a46d0f61f56312e215d8896d836653ffdc6753d
+azure-identity==1.25.3 \
+    --hash=sha256:ab23c0d63015f50b630ef6c6cf395e7262f439ce06e5d07a64e874c724f8d9e6 \
+    --hash=sha256:f4d0b956a8146f30333e071374171f3cfa7bdb8073adb8c3814b65567aa7447c
     # via
     #   -r requirements.in
     #   azure-monitor-opentelemetry-exporter
@@ -462,9 +462,9 @@ more-ds==0.0.6 \
     --hash=sha256:777df5b01e3a492ccccd4058156e7d916013e02e85248a8b2c2ca1d1ab13789b \
     --hash=sha256:931d6913beebcf9c4e8155b6b58eef3fc94f000c5b6fb838261b2c0c8886b69c
     # via -r requirements.in
-msal==1.32.3 \
-    --hash=sha256:5eea038689c78a5a70ca8ecbe1245458b55a857bd096efb6989c69ba15985d35 \
-    --hash=sha256:b2798db57760b1961b142f027ffb7c8169536bf77316e99a0df5c4aaebb11569
+msal==1.35.1 \
+    --hash=sha256:70cac18ab80a053bff86219ba64cfe3da1f307c74b009e2da57ef040eb1b5656 \
+    --hash=sha256:8f4e82f34b10c19e326ec69f44dc6b30171f2f7098f3720ea8a9f0c11832caa3
     # via
     #   azure-identity
     #   msal-extensions
