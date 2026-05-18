@@ -43,9 +43,9 @@ azure-monitor-opentelemetry-exporter==1.0.0b48 \
     --hash=sha256:5773def013e508efffa55a17768409be4b2ba369724766a89775fdc0101cc4c1 \
     --hash=sha256:da17ac143b84516e639ce06f2d7119b7a7af99214bb773c652137e620e868eb7
     # via azure-monitor-opentelemetry
-azure-storage-blob==12.28.0 \
-    --hash=sha256:00fb1db28bf6a7b7ecaa48e3b1d5c83bfadacc5a678b77826081304bd87d6461 \
-    --hash=sha256:e7d98ea108258d29aa0efbfd591b2e2075fa1722a2fae8699f0b3c9de11eff41
+azure-storage-blob==12.29.0 \
+    --hash=sha256:2824ddd7ebc9056034ebc76b17971a38e9aa5835abb0d565b9700493f2a6c657 \
+    --hash=sha256:ccf8a1bcd5e49df83ab85aab793b579e5ba2eeea2ad8900b2f62ca3a37dc391f
     # via -r requirements.in
 certifi==2026.2.25 \
     --hash=sha256:027692e4402ad994f1c42e52a4997a9763c646b73e4096e4d5d6db8af1d6f0fa \
@@ -690,9 +690,9 @@ python-json-logger==4.1.0 \
     --hash=sha256:132994765cf75bf44554be9aa49b06ef2345d23661a96720262716438141b6b2 \
     --hash=sha256:b396b9e3ed782b09ff9d6e4f1683d46c83ad0d35d2e407c09a9ebbf038f88195
     # via -r requirements.in
-requests==2.34.0 \
-    --hash=sha256:7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a \
-    --hash=sha256:917520a21b767485ce7c588f4ebb917c436b24a31231b44228715eaeb5a52c60
+requests==2.34.2 \
+    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0 \
+    --hash=sha256:f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed
     # via
     #   -r requirements.in
     #   azure-core
