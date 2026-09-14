@@ -3,7 +3,7 @@ django-environ == 0.14.0
 django-cors-headers == 4.9.0
 django-healthchecks == 1.5.0
 datapunt-authorization-django == 3.0.0
-djangorestframework == 3.18.0
+djangorestframework == 3.18.1
 python-json-logger==4.2.0
 requests == 2.34.2
 more-ds == 0.0.6
